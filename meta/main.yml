@@ -1,0 +1,29 @@
+---
+galaxy_info:
+  author: Thorian93
+  description: Ansible Role Certbot
+  license: "license (MIT)"
+
+  min_ansible_version: 2.9
+
+  galaxy_tags:
+    - linux
+    - server
+    - web
+    - apache2
+    - nginx
+    - certificate
+    - encryption
+
+  platforms:
+    - name: Debian
+      versions:
+      - Stretch
+      - Buster
+    - name: Ubuntu
+      versions:
+      - Xenial
+      - Bionic
+
+dependencies:
+  - { role: thorian93.ansible-role-webserver }

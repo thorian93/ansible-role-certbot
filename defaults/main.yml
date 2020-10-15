@@ -1,0 +1,18 @@
+---
+certbot_stable_os:
+  - Ubuntu 16
+  - Ubuntu 18
+  - Debian 9
+  - Debian 10
+
+certbot_ppa: "ppa:certbot/certbot"
+
+certbot_staging: true
+certbot_mode: certonly
+certbot_email: "foo@bar.org"
+certbot_module: apache
+certbot_force_renewal: false
+certbot_domains: "foo.bar"
+certbot_cert_path: "/etc/letsencrypt/live/foo.bar"
+
+certbot_package: "python-certbot-{{ certbot_module }}"
