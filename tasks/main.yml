@@ -10,13 +10,13 @@
   apt_repository:
     repo: "{{ item }}"
     state: present
-    update_cache: yes
+    update_cache: 'yes'
   with_items: "{{ certbot_ppa }}"
   when: ansible_distribution == "Ubuntu"
 
 - name: "Force APT Cache Update."
   apt:
-    update_cache: yes
+    update_cache: 'yes'
     cache_valid_time: 0
   when: ansible_pkg_mgr == "apt"
 
@@ -30,7 +30,7 @@
     name: "Automatically renew all certificates issued via certbot with Apache2."
     job: '"$(command -v certbot)" renew --post-hook "systemctl reload {{ webserver_apache_name }}" -n --user-agent "" --agree-tos --expand'
     state: present
-    disabled: no
+    disabled: 'no'
     minute: '13'
     hour: '15'
     day: '*/3'
@@ -43,7 +43,7 @@
     name: "Automatically renew all certificates issued via certbot with NGINX."
     job: '"$(command -v certbot)" renew --post-hook "systemctl reload {{ webserver_nginx_name }}" -n --user-agent "" --agree-tos --expand'
     state: present
-    disabled: no
+    disabled: 'no'
     minute: '15'
     hour: '13'
     day: '*/3'
@@ -66,7 +66,7 @@
   when: not certbot_staging
   register: certbot_validation
   notify: "restart webserver {{ certbot_module }}"
-  ignore_errors: yes
+  ignore_errors: 'yes'
 
 - name: "Certbot output for production."
   debug: msg="{{certbot_validation.stdout_lines}}"

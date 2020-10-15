@@ -18,12 +18,12 @@ galaxy_info:
   platforms:
     - name: Debian
       versions:
-      - Stretch
-      - Buster
+        - Stretch
+        - Buster
     - name: Ubuntu
       versions:
-      - Xenial
-      - Bionic
+        - Xenial
+        - Bionic
 
 dependencies:
   - { role: thorian93.ansible-role-webserver }
