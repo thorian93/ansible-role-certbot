@@ -26,4 +26,5 @@ galaxy_info:
         - Bionic
 
 dependencies:
-  - { role: thorian93.ansible_role_webserver }
+  - name: thorian93.ansible_role_webserver
+    version: master
