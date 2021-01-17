@@ -24,6 +24,7 @@ galaxy_info:
       versions:
         - Xenial
         - Bionic
+        - Focal
 
 dependencies:
   - name: thorian93.ansible_role_webserver
