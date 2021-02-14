@@ -53,7 +53,7 @@
 
 - name: "Get certificates using apache module against the staging server."
   command: certbot "{{ certbot_mode }}" -n --"{{ certbot_module }}" -d "{{ certbot_domains }}" -m "{{ certbot_email }}" --user-agent "" --agree-tos --expand --staging
-  when: certbot_staging
+  when: certbot_staging | bool
   register: certbot_validation
   notify: "restart webserver {{ certbot_module }}"
 
@@ -63,7 +63,7 @@
 
 - name: "Get certificates using apache module against the productive server."
   command: certbot "{{ certbot_mode }}" -n --"{{ certbot_module }}" -d "{{ certbot_domains }}" -m "{{ certbot_email }}" --user-agent "" --agree-tos --expand
-  when: not certbot_staging
+  when: not certbot_staging | bool
   register: certbot_validation
   notify: "restart webserver {{ certbot_module }}"
   ignore_errors: 'yes'
@@ -74,7 +74,7 @@
 
 - name: "Get certificates using apache module against the productive server enforcing a renewal."
   command: certbot "{{ certbot_mode }}" -n --"{{ certbot_module }}" -d "{{ certbot_domains }}" -m "{{ certbot_email }}" --user-agent "" --agree-tos --expand --force-renew
-  when: not certbot_staging and certbot_force_renewal
+  when: not certbot_staging | bool and certbot_force_renewal | bool
   register: certbot_validation
   notify: "restart webserver {{ certbot_module }}"
 
