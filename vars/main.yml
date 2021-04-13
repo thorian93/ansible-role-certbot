@@ -1,0 +1,3 @@
+certbot_packages:
+  - certbot
+  - "python3-certbot-{{ certbot_module }}"
