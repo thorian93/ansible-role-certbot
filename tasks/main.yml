@@ -59,7 +59,7 @@
   notify: "restart webserver {{ certbot_module }}"
 
 - name: "Certbot output for staging."
-  debug: msg="{{certbot_validation.stdout_lines}}"
+  debug: msg="{{ certbot_validation.stdout_lines }}"
   when: certbot_validation.stdout_lines is defined
 
 - name: "Get certificates using apache module against the productive server."
@@ -70,7 +70,7 @@
   ignore_errors: 'yes'
 
 - name: "Certbot output for production."
-  debug: msg="{{certbot_validation.stdout_lines}}"
+  debug: msg="{{ certbot_validation.stdout_lines }}"
   when: certbot_validation.stdout_lines is defined
 
 - name: "Get certificates using apache module against the productive server enforcing a renewal."
