@@ -1,6 +1,6 @@
 # Ansible Role: Certbot
 
-This role installs Certbot and manages certificates with LetsEncrypt on RHEL/CentOS, Debian/Ubuntu and Fedora servers.
+This role installs [Certbot](https://certbot.eff.org/) and manages certificates with LetsEncrypt on RHEL/CentOS, Debian/Ubuntu and Fedora servers.
 
 [![Ansible Role: Certbot](https://img.shields.io/ansible/role/51302?style=flat-square)](https://galaxy.ansible.com/thorian93/ansible_role_certbot)
 [![Ansible Role: Certbot](https://img.shields.io/ansible/quality/51302?style=flat-square)](https://galaxy.ansible.com/thorian93/ansible_role_certbot)
@@ -21,7 +21,35 @@ No special requirements; note that this role requires root access, so either run
 
 ## Role Variables
 
-ToDo
+Available variables are listed below, along with default values (see `defaults/main.yml`):
+
+    certbot_staging: 'true'
+
+Whether to get certificates against the staging or production environment.
+
+    certbot_mode: certonly
+
+Which certbot mode to use.
+
+    certbot_email: "foo@bar.org"
+
+The email corresponding to your account.
+
+    certbot_module: apache
+
+Which module to use to obtain certificates.
+
+    certbot_force_renewal: 'false'
+
+Whether to force a renewal or not.
+
+    certbot_domains: "foo.bar"
+
+A comma separated list of domains for the certificate.
+
+    certbot_cert_path: "/etc/letsencrypt/live/foo.bar"
+
+The path to the certificate folder. This can be used in other roles and `foo.bar` should be replaced by the first domain in `certbot_domains`.
 
 ## Dependencies
 
