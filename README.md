@@ -2,9 +2,9 @@
 
 This role installs [Certbot](https://certbot.eff.org/) and manages certificates with LetsEncrypt on RHEL/CentOS, Debian/Ubuntu and Fedora servers.
 
-[![Ansible Role: Certbot](https://img.shields.io/ansible/role/51302?style=flat-square)](https://galaxy.ansible.com/thorian93/ansible_role_certbot)
-[![Ansible Role: Certbot](https://img.shields.io/ansible/quality/51302?style=flat-square)](https://galaxy.ansible.com/thorian93/ansible_role_certbot)
-[![Ansible Role: Certbot](https://img.shields.io/ansible/role/d/51302?style=flat-square)](https://galaxy.ansible.com/thorian93/ansible_role_certbot)
+[![Ansible Role: Certbot](https://img.shields.io/ansible/role/55129?style=flat-square)](https://galaxy.ansible.com/thorian93/certbot)
+[![Ansible Role: Certbot](https://img.shields.io/ansible/quality/55129?style=flat-square)](https://galaxy.ansible.com/thorian93/certbot)
+[![Ansible Role: Certbot](https://img.shields.io/ansible/role/d/55129?style=flat-square)](https://galaxy.ansible.com/thorian93/certbot)
 
 ## Known issues
 
