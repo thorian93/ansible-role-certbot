@@ -3,6 +3,7 @@ galaxy_info:
   role_name: certbot
   author: thorian93
   description: EFF Certbot Certificate Management Tool
+  license: "license (MIT)"
 
   min_ansible_version: 2.9
 
